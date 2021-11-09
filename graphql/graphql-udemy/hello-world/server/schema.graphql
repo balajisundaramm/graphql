@@ -1,0 +1,75 @@
+type Query {
+    greeting: String
+    partners: PartnerrResponse
+    stores: StoresResponse
+    users(input: GetJobInput): UserResponse
+}
+
+input GetJobInput {
+    collectionPointId: String
+    department: String 
+    maxRecordsPerPage: String
+    pageNo: String
+    sort: String
+}
+
+type PartnerrResponse {
+    partners: [Partner]
+    result: Result
+}
+
+type StoresResponse {
+    stores: [Store]
+    result: Result
+}
+
+type Store {
+    address: String
+    collectionTimeId: Int
+    contactNumber: String
+    email: String
+    externalCollectionPointId: String
+    id: Int
+    name: String
+    partnerId: Int
+    warehouseId: Int
+}
+
+type UserResponse {
+    totalNoOfRecords: Int
+    maxRecordsPerPage: Int
+    pageNo: Int
+    result: Result
+    userDetails: [UserDetail]
+}
+
+type Partner {
+    countryCode: String
+    id: Int
+    name: String
+}
+
+
+type Result {
+    responseCode: String
+    responseDescription: String
+}
+
+type UserDetail {
+    id: Int!
+    address: String
+    collectionPointId: Int
+    department: String
+    email: String
+    firstName: String
+    gender: String
+    idNumber: String
+    idType: String
+    isDefaultUser: Int
+    lastName: String
+    msisdn: String
+    passwordResetRequired: Int
+    roles: String
+    status: String
+    username: String
+}

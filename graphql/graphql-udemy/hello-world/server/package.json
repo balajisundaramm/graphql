@@ -1,0 +1,8 @@
+{
+    "name": "hello-world-server",
+    "dependencies": {
+        "apollo-datasource-rest": "^0.13.0",
+        "apollo-server": "^2.24.0",
+        "graphql": "^14.7.0"
+    }
+}
